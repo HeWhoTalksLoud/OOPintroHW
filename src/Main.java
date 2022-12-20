@@ -25,5 +25,13 @@ public class Main {
         System.out.println(carBMWZ8);
         System.out.println(carKiaSportage);
         System.out.println(carHyundaiAvante);
+
+        carKiaSportage.setLicensePlate("78 ооо rus");
+        carHyundaiAvante.setColor("beige");
+        carHyundaiAvante.changeTires();
+
+        System.out.println();
+        System.out.println(carKiaSportage);
+        System.out.println(carHyundaiAvante);
     }
 }

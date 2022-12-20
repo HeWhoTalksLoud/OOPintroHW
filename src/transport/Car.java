@@ -147,4 +147,4 @@ public class Car {
                 ", кол-во мест: " + seatsNumber + "\n" +
                 "зимняя резина: " + (areWinterTires ? "да":"нет");
     }
-} // transport.Car
+} //  transport.Car
