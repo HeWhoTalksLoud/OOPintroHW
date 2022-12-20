@@ -1,15 +1,21 @@
 package transport;
 
+import com.sun.nio.sctp.AbstractNotificationHandler;
+
 public class Car {
+
     String brand;
     String model;
     float engineVolume;
     String color;
     int productionYear;
     String productionCountry;
-    public String getBrand() {
-        return brand;
-    }
+    String gearbox;
+    String bodyType;
+    String licensePlate;
+    int seatsNumber;
+    boolean areWinterTires;
+
 
     public Car(String brand, String model, float engineVolume, String color,
                int productionYear, String productionCountry) {
@@ -34,8 +40,23 @@ public class Car {
         else this.productionYear = productionYear;
     }
 
+    public Car(String brand, String model, float engineVolume, String color, int productionYear,
+               String productionCountry, String gearbox, String bodyType, String licensePlate,
+               int seatsNumber, boolean areWinterTires) {
+        this(brand, model, engineVolume, color, productionYear, productionCountry);
+        this.gearbox = gearbox;
+        this.bodyType = bodyType;
+        this.licensePlate = licensePlate;
+        this.seatsNumber = seatsNumber;
+        this.areWinterTires = areWinterTires;
+    }
+
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public String getBrand() {
+        return brand;
     }
 
     public String getModel() {
