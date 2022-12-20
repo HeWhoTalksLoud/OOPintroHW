@@ -7,24 +7,10 @@ public class Main {
                 "black", 2015, "Germany");
         Car carBMWZ8 = new Car("BMW", "Z8", 3.0f, "black",
                 2021, "Germany");
-        Car carKiaSportage = new Car();
-        Car carHyundaiAvante = new Car();
-
-
-
-        carKiaSportage.setBrand("Kia");
-        carKiaSportage.setModel("Sportage");
-        carKiaSportage.setProductionYear(2018);
-        carKiaSportage.setProductionCountry("South Korea");
-        carKiaSportage.setColor("red");
-        carKiaSportage.setEngineVolume(2.4f);
-
-        carHyundaiAvante.setBrand("Hyundai");
-        carHyundaiAvante.setModel("Avante");
-        carHyundaiAvante.setProductionYear(2016);
-        carHyundaiAvante.setProductionCountry("South Korea");
-        carHyundaiAvante.setColor("orange");
-        carHyundaiAvante.setEngineVolume(1.6f);
+        Car carKiaSportage = new Car("Kia", "Sportage", 2.4f,
+                "red", 2018, "South Korea");
+        Car carHyundaiAvante = new Car("Hyundai", "Avante", 1.6f,
+                "orange", 2016, "South Korea");
 
 
         System.out.println(carGranta);
