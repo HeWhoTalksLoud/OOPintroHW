@@ -2,23 +2,27 @@ package transport;
 
 import com.sun.nio.sctp.AbstractNotificationHandler;
 
+import java.time.LocalDate;
+
 public class Car {
 
-    String brand;
-    String model;
+    final String brand;
+    final String model;
     float engineVolume;
     String color;
-    int productionYear;
-    String productionCountry;
+    final int productionYear;
+    final String productionCountry;
     String gearbox;
-    String bodyType;
+    final String bodyType;
     String licensePlate;
-    int seatsNumber;
+    final int seatsNumber;
     boolean areWinterTires;
 
 
-    public Car(String brand, String model, float engineVolume, String color,
-               int productionYear, String productionCountry) {
+
+    public Car(String brand, String model, float engineVolume, String color, int productionYear,
+               String productionCountry, String gearbox, String bodyType, String licensePlate,
+               int seatsNumber, boolean areWinterTires) {
         if (brand == null || brand.equals("")) this.brand = "default";
         else this.brand = brand;
 
@@ -38,22 +42,22 @@ public class Car {
 
         if (productionYear <= 0) this.productionYear = 2000;
         else this.productionYear = productionYear;
-    }
 
-    public Car(String brand, String model, float engineVolume, String color, int productionYear,
-               String productionCountry, String gearbox, String bodyType, String licensePlate,
-               int seatsNumber, boolean areWinterTires) {
-        this(brand, model, engineVolume, color, productionYear, productionCountry);
-        this.gearbox = gearbox;
-        this.bodyType = bodyType;
-        this.licensePlate = licensePlate;
-        this.seatsNumber = seatsNumber;
+        if (gearbox == null || gearbox.equals("")) this.gearbox = "manual";
+        else this.gearbox = gearbox;
+
+        if (bodyType == null || bodyType.equals("")) this.bodyType = "sedan";
+        else this.bodyType = bodyType;
+
+        if (licensePlate == null || licensePlate.equals("")) this.licensePlate = "default";
+        else this.licensePlate = licensePlate;
+
+        if (seatsNumber <= 0) this.seatsNumber = 4;
+        else this.seatsNumber = seatsNumber;
+
         this.areWinterTires = areWinterTires;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
 
     public String getBrand() {
         return brand;
@@ -63,9 +67,6 @@ public class Car {
         return model;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
 
     public float getEngineVolume() {
         return engineVolume;
@@ -80,23 +81,56 @@ public class Car {
     }
 
     public void setColor(String color) {
-        this.color = color;
+        if (color == null || color.equals("")) this.color = "white";
+        else this.color = color;
     }
 
     public int getProductionYear() {
         return productionYear;
     }
 
-    public void setProductionYear(int productionYear) {
-        this.productionYear = productionYear;
-    }
 
     public String getProductionCountry() {
         return productionCountry;
     }
 
-    public void setProductionCountry(String productionCountry) {
-        this.productionCountry = productionCountry;
+    public void changeTires() {
+        setAreWinterTires(LocalDate.now().getMonthValue() > 11 ||
+                LocalDate.now().getMonthValue() < 3);
+    }
+
+    public String getGearbox() {
+        return gearbox;
+    }
+
+    public void setGearbox(String gearbox) {
+        if (gearbox == null || gearbox.equals("")) this.gearbox = "manual";
+        else this.gearbox = gearbox;
+    }
+
+    public String getBodyType() {
+        return bodyType;
+    }
+
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        if (licensePlate == null || licensePlate.equals("")) this.licensePlate = "default";
+        else this.licensePlate = licensePlate;
+    }
+
+    public int getSeatsNumber() {
+        return seatsNumber;
+    }
+
+    public boolean isAreWinterTires() {
+        return areWinterTires;
+    }
+
+    public void setAreWinterTires(boolean areWinterTires) {
+        this.areWinterTires = areWinterTires;
     }
 
     @Override
@@ -106,6 +140,11 @@ public class Car {
                 ", объем двигателя: " + engineVolume +
                 ", цвет: " + color +
                 ", год производства: " + productionYear +
-                ", страна сборки: " + productionCountry;
+                ", страна сборки: " + productionCountry + "\n" +
+                "коробка передач: " + gearbox +
+                ", тип кузова: " + bodyType +
+                ", рег. номер: " + licensePlate +
+                ", кол-во мест: " + seatsNumber + "\n" +
+                "зимняя резина: " + (areWinterTires ? "да":"нет");
     }
 } // transport.Car
