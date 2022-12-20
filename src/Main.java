@@ -1,5 +1,7 @@
 import transport.Car;
 
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -40,5 +42,20 @@ public class Main {
         System.out.println();
         System.out.println(keyGranta);
         System.out.println(keyZ8);
+
+        Car.Insurance insKia = carKiaSportage.new Insurance(null, 15000,
+                "123456");
+        Car.Insurance insAudi = carAudiA8.new Insurance(LocalDate.of(2025, 12, 28), 100000,
+                "012345678");
+
+        System.out.println();
+        System.out.println(insKia);
+        System.out.println(insAudi);
+
+        System.out.println("Страховка на Kia: " +
+                (insKia.isValid() ? "действительна" : "просрочена"));
+        System.out.println("Номер страховки на Kia: " +
+                (insKia.isNumberCorrect() ? "корректный" : "некорректный"));
+
     }
 }

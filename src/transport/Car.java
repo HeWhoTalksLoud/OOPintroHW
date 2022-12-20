@@ -1,7 +1,5 @@
 package transport;
 
-import com.sun.nio.sctp.AbstractNotificationHandler;
-
 import java.time.LocalDate;
 
 public class Car {
@@ -20,7 +18,42 @@ public class Car {
             return "Бесключевой доступ: " + (hasKeylessAccess ? "да" : "нет") +
                     ", удаленный запуск: " + (hasRemoteStart ? "да" : "нет");
         }
-    }
+    } // Car.Key
+
+    public class Insurance {
+
+        private final LocalDate validDate;
+        private final int price;
+        private final String number;
+
+        public Insurance(LocalDate validDate, int price, String number) {
+            if (validDate == null) {
+                this.validDate = LocalDate.now().plusYears(2);
+            }
+            else this.validDate = validDate;
+
+            if (price <= 0) this.price = 10_000;
+            else this.price = price;
+
+            if (number == null || number.equals("")) this.number = "123456789";
+            else this.number = number;
+        }
+
+        public boolean isValid() {
+            return LocalDate.now().isBefore(validDate);
+        }
+
+        public boolean isNumberCorrect() {
+            return number.length() == 9;
+        }
+
+        @Override
+        public String toString() {
+            return "Действительна до: " + validDate +
+                    ", стоимость: " + price +
+                    ", номер:" + number;
+        }
+    } // Car.Insurance
 
     private final String brand;
     private final String model;
