@@ -5,7 +5,7 @@ public class Main {
                 "yellow", -2, "Russia");
         Car carAudiA8 = new Car("Audi", "A8 50 L TDI quattro", 3.0f,
                 null, 2015, "Germany");
-        Car carBMWZ8 = new Car("", "Z8", 3.0f, "black",
+        Car carBMWZ8 = new Car("", "Z8", -5, "black",
                 2021, "Germany");
         Car carKiaSportage = new Car("Kia", "Sportage", 0,
                 "red", 2018, null);
