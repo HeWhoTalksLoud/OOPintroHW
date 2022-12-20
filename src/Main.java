@@ -33,5 +33,12 @@ public class Main {
         System.out.println();
         System.out.println(carKiaSportage);
         System.out.println(carHyundaiAvante);
+
+        Car.Key keyGranta = carGranta.new Key(false, false);
+        Car.Key keyZ8 = carBMWZ8.new Key(true, true);
+
+        System.out.println();
+        System.out.println(keyGranta);
+        System.out.println(keyZ8);
     }
 }

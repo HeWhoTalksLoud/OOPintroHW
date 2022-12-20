@@ -6,17 +6,33 @@ import java.time.LocalDate;
 
 public class Car {
 
-    final String brand;
-    final String model;
-    float engineVolume;
-    String color;
-    final int productionYear;
-    final String productionCountry;
-    String gearbox;
-    final String bodyType;
-    String licensePlate;
-    final int seatsNumber;
-    boolean areWinterTires;
+    public class Key {
+        private final boolean hasKeylessAccess;
+        private final boolean hasRemoteStart;
+
+        public Key(boolean hasKeylessAccess, boolean hasRemoteStart) {
+            this.hasKeylessAccess = hasKeylessAccess;
+            this.hasRemoteStart = hasRemoteStart;
+        }
+
+        @Override
+        public String toString() {
+            return "Бесключевой доступ: " + (hasKeylessAccess ? "да" : "нет") +
+                    ", удаленный запуск: " + (hasRemoteStart ? "да" : "нет");
+        }
+    }
+
+    private final String brand;
+    private final String model;
+    private float engineVolume;
+    private String color;
+    private final int productionYear;
+    private final String productionCountry;
+    private String gearbox;
+    private final String bodyType;
+    private String licensePlate;
+    private final int seatsNumber;
+    private boolean areWinterTires;
 
 
 
