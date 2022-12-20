@@ -1,32 +1,16 @@
 public class Main {
     public static void main(String[] args) {
 
-        Car carGranta = new Car();
-        Car carAudiA8 = new Car();
-        Car carBMWZ8 = new Car();
+        Car carGranta = new Car("Lada", "Granta", 1.7f,
+                "yellow", 2015, "Russia");
+        Car carAudiA8 = new Car("Audi", "A8 50 L TDI quattro", 3.0f,
+                "black", 2015, "Germany");
+        Car carBMWZ8 = new Car("BMW", "Z8", 3.0f, "black",
+                2021, "Germany");
         Car carKiaSportage = new Car();
         Car carHyundaiAvante = new Car();
 
-        carGranta.setBrand("Lada");
-        carGranta.setModel("Granta");
-        carGranta.setProductionYear(2015);
-        carGranta.setProductionCountry("Russia");
-        carGranta.setColor("yellow");
-        carGranta.setEngineVolume(1.7f);
 
-        carAudiA8.setBrand("Audi");
-        carAudiA8.setModel("A8 50 L TDI quattro");
-        carAudiA8.setProductionYear(2020);
-        carAudiA8.setProductionCountry("Germany");
-        carAudiA8.setColor("black");
-        carAudiA8.setEngineVolume(3.0f);
-
-        carBMWZ8.setBrand("BMW");
-        carBMWZ8.setModel("Z8");
-        carBMWZ8.setProductionYear(2021);
-        carBMWZ8.setProductionCountry("Germany");
-        carBMWZ8.setColor("black");
-        carBMWZ8.setEngineVolume(3.0f);
 
         carKiaSportage.setBrand("Kia");
         carKiaSportage.setModel("Sportage");
