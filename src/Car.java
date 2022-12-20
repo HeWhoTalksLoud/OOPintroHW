@@ -11,13 +11,13 @@ public class Car {
 
     public Car(String brand, String model, float engineVolume, String color,
                int productionYear, String productionCountry) {
-        if (brand.equals("") || brand == null) this.brand = "default";
+        if (brand == null || brand.equals("")) this.brand = "default";
         else this.brand = brand;
 
-        if (model.equals("") || model == null) this.model = "default";
+        if (model == null || model.equals("")) this.model = "default";
         else this.model = model;
 
-        if (productionCountry.equals("") || productionCountry == null) {
+        if (productionCountry == null || productionCountry.equals("")) {
             this.productionCountry = "default";
         }
         else this.productionCountry = productionCountry;
@@ -25,7 +25,7 @@ public class Car {
         if (engineVolume <= 0) this.engineVolume = 1.5f;
         else this.engineVolume = engineVolume;
 
-        if (color.equals("") || color == null) this.color = "white";
+        if (color == null || color.equals("")) this.color = "white";
         else this.color = color;
 
         if (productionYear <= 0) this.productionYear = 2000;

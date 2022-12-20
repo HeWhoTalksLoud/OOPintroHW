@@ -4,11 +4,11 @@ public class Main {
         Car carGranta = new Car("Lada", "", 1.7f,
                 "yellow", -2, "Russia");
         Car carAudiA8 = new Car("Audi", "A8 50 L TDI quattro", 3.0f,
-                "", 2015, "Germany");
+                null, 2015, "Germany");
         Car carBMWZ8 = new Car("", "Z8", 3.0f, "black",
                 2021, "Germany");
         Car carKiaSportage = new Car("Kia", "Sportage", 0,
-                "red", 2018, "");
+                "red", 2018, null);
         Car carHyundaiAvante = new Car("Hyundai", "Avante", 1.6f,
                 "", 0, "South Korea");
 
